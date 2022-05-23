@@ -1,3 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
-    margin: 0;
+    margin: 2rem;
+    font-family: 'Roboto', sans-serif;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+header img {
+    width: 30vw;
+    height: auto;
+}
+
+header button {
+    height: 7vh;
+    width: 15vw;
+    border-style: none;
+    font-size: 1.5rem;
+    background-color: greenyellow;
+}
+
+header button:hover {
+    background-color: rgb(149, 224, 36);
+}
+
+.todo {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td {
+    border:1px solid black;
+    width: 60vw;
+    height: 4vh;
+    font-size: 1rem;
+  }
+
+  h1 {
+      font-size: 3rem;
+  }
+
+  p {
+      font-size: 1.5rem;
+  }
