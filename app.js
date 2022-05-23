@@ -31,22 +31,7 @@ const getAttendees = async () => {
             table.appendChild(whiteSpace)
             whiteSpace.appendChild(whiteHead)
             
-            // Creating columns for each dates
-            for (let j = 0; j < data[i].dates.length; j++) {
-                let th = document.createElement("th")
-                th.innerHTML = data[i].dates[j].date
-                whiteSpace.appendChild(th)
-
-                for (let g = 0; g < data[i].dates[0].date.length; g++) {
-                    let td = document.createElement("td")
-                    td.innerHTML = data[i].dates[0].attendees[g].available
-                    if (data[i].dates[0].attendees[g].available == true) {
-                        td.innerHTML = "true"
-                    } else td.innerHTML = "false"
-                    console.log(data[i].dates[0].attendees[g].available);
-                }
-            }
-
+            // DYNAMICALLY ADD THE DATA IN THE HTML
             for (let k = 0; k < data[i].dates[0].attendees.length; k++) {
                 let tr = document.createElement("tr")
                 let td = document.createElement("td")
@@ -54,7 +39,36 @@ const getAttendees = async () => {
                 table.appendChild(tr)
                 tr.appendChild(td)
             }
-            
+
+            for (let j = 0; j < data[i].dates.length; j++) {
+                let th = document.createElement("th")
+                th.innerHTML = data[i].dates[j].date
+                whiteSpace.appendChild(th)
+
+                for (let g = 0; g < data[i].dates[0].attendees.length; g++) {
+                    let td = document.createElement("td")
+                    if (data[i].dates[0].attendees[g].available == true) {
+                        td.innerHTML = "Yes";
+                    } else td.innerHTML = "No";
+                    
+                    // table.appendChild(td)
+
+                    console.log(data[i].dates[0].attendees[g].available);
+                }
+            }
+
+
+            // CONFIRM PRESENCE TO THE EVENT
+            let addPersona = document.createElement("tr")
+            table.appendChild(addPersona)
+            let addName = document.createElement("input")
+            addPersona.appendChild(addName)
+
+            for (let j = 0; j < data[i].dates.length; j++) {
+                let addPresence = document.createElement("td")
+                addPresence.innerHTML = "test"
+                addPersona.appendChild(addPresence)
+            }
         }
 
         // document.querySelector(".title").innerHTML = data[0].name

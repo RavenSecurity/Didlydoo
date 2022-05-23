@@ -28,10 +28,10 @@ header button:hover {
     background-color: rgb(149, 224, 36);
 }
 
-.todo {
+#todo {
     margin-top: 5vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 table {
