@@ -11,7 +11,14 @@
 <body>
     <header>
         <img src="logo.png" alt="">
-        <button>Add an event</button>
+        <div class="addEvent">
+          <button onclick="AddEvent" class="moreEvent">Add an event</button>
+          <input type="text" placeholder="Title">
+          <input type="text" placeholder="Description">
+          <input type="date" class="date">
+       <button onclick="addDate()" class="moreDate">Add a date</button>
+        </div>
+        
     </header>
 
     <div id="todo">

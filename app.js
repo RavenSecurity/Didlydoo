@@ -5,9 +5,6 @@ const getAttendees = async () => {
 
     const data = await req.json()
     console.log(data)
-    
-
-    
 
     // Generate tables dynamically 
     function generateTables(data) {
@@ -40,7 +37,6 @@ const getAttendees = async () => {
                 for(let attendee=0; attendee < data[i].dates[date].attendees.length;attendee++ ){
                     console.log(`data[${i}].dates[${date}].attendee[${attendee}]`)
                     console.log(data[i].dates[date].attendees[attendee])
-
                 }
             }
             
@@ -68,9 +64,6 @@ const getAttendees = async () => {
                 let th = document.createElement("th")
                 th.innerHTML = data[i].dates[j].date
                 whiteSpace.appendChild(th)
-                
-
-                
                     
                     // table.appendChild(td)
 
@@ -115,3 +108,39 @@ const getAttendees = async () => {
 }
 
 getAttendees()
+
+
+// Event Creation
+// Add a date button
+let dateButton = document.querySelector(".moreDate")
+
+dateButton.addEventListener("click", addDate)
+function addDate() {
+    let div = document.querySelector("header")
+    let newDate = document.createElement('input')
+    newDate.classList = "date"
+    newDate.setAttribute("type", "date");
+    div.appendChild(newDate)
+
+    console.log("Bonjour");
+}
+
+const createEvent = async () => {
+    const reqx = await fetch('http://localhost:3000/api/events/', {
+        method: 'POST',
+        headers: {"Content-Type": "Application/JSON"},
+        body: JSON.stringify({
+            name: "Mon anniversaire",
+            description: "Venez svp",
+            author: "Wayane",
+            dates: ["2022-11-01", "2022-11-02"]
+        })
+    })
+
+    const data = await reqx.json()
+
+    console.log(data)
+}
+
+let eventButton = document.querySelector(".moreEvent")
+eventButton.addEventListener("click", createEvent)

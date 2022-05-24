@@ -28,6 +28,23 @@ header button:hover {
     background-color: rgb(149, 224, 36);
 }
 
+header .moreDate {
+    background-color: rgb(212, 57, 57);
+    height: 4vh;
+    width: 10vw;
+    vertical-align: middle;
+}
+
+header .moreDate:hover {
+    background-color: rgb(187, 42, 42);
+}
+
+header .date {
+    background-color: ;
+    height: 2vh;
+
+}
+
 #todo {
     margin-top: 5vh;
     display: flex;
